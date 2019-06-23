@@ -7,9 +7,7 @@ import (
 
 func generateSeive(maxN int) []int {
 
-	maxN = maxN + 1
-
-	// Create a seive of boolean values upto new maxN
+	// Create a seive of boolean values upto maxN+1
 	seive := make([]bool, maxN+1)
 
 	// Since by default all empty bool values are false
