@@ -21,7 +21,7 @@ func generateSeive(maxN int) []int {
 	// multiples are marked as not prime (seive[i] = false)
 	for i := 2; i <= int(math.Sqrt(float64(maxN+1))); i++ {
 		if seive[i] == true {
-			for j := i * 2; j <= maxN+1; j += i {
+			for j := i * 2; j < maxN+1; j += i {
 				seive[j] = false
 			}
 		}
@@ -36,8 +36,8 @@ func generateSeive(maxN int) []int {
 			primeList = append(primeList, i)
 		}
 	}
-	return primeList
 
+	return primeList
 }
 
 func main() {
