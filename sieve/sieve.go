@@ -6,6 +6,10 @@ import (
 
 // GenerateSieve returns a list of prime numbers up to maxN
 func GenerateSieve(maxN int) []int {
+	if maxN <= 1 {
+		return []int{}
+	}
+
 	// Create a sieve of boolean values upto maxN+1
 	maxN++
 	sieve := make([]bool, maxN)
@@ -31,7 +35,7 @@ func GenerateSieve(maxN int) []int {
 	// that are prime. We will now add all indeces to the
 	// prime number list
 	primeList := make([]int, 0)
-	for i := 0; i < maxN; i++ {
+	for i := 2; i < maxN; i++ {
 		if sieve[i] {
 			primeList = append(primeList, i)
 		}
