@@ -20,7 +20,7 @@ func GenerateSieve(maxN int) []int {
 	// If a number is prime (sieve[i] = true) its corresponding
 	// multiples are marked as not prime (sieve[i] = false)
 	for i := 2; i <= int(math.Sqrt(float64(maxN))); i++ {
-		if sieve[i] == true {
+		if sieve[i] {
 			for j := i * 2; j < maxN; j += i {
 				sieve[j] = false
 			}
@@ -32,7 +32,7 @@ func GenerateSieve(maxN int) []int {
 	// prime number list
 	primeList := make([]int, 0)
 	for i := 0; i < maxN; i++ {
-		if sieve[i] == true {
+		if sieve[i] {
 			primeList = append(primeList, i)
 		}
 	}
